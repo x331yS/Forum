@@ -1,6 +1,6 @@
 # forum
 
-## Fiber
+## Run
 
 The `go mod init` command initializes dependencies for our program.
 
