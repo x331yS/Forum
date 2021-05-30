@@ -1,13 +1,18 @@
 package main
 
-import "github.com/gofiber/fiber/v2"
+import (
+	// "database/sql"
+	// "fmt"
+	// "github.com/gofiber/fiber/v2"
+	// _ "github.com/mattn/go-sqlite3"
+	// "log"
+	"github.com/anatolethien/forum/pkg/forum_db"
+	"github.com/anatolethien/forum/pkg/forum_web"
+)
 
 func main() {
-	app := fiber.New()
-
-	app.Get("/", func(c *fiber.Ctx) error {
-		return c.SendString("Hello, World!")
-	})
-
-	app.Listen(":3000")
+	forum_db.CreateDatabase()
+	// forum_db.AddUser(forum_db.User{Username: "totole", Password: "123"})
+	// forum_db.ScanUser()
+	forum_web.Server()
 }
