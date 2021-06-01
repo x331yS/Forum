@@ -80,10 +80,6 @@ header .logo {
 
 }
 
-/**/
-/**/
-/**/
-
 .navigation {
     display: flex;
     justify-content: center;
@@ -175,4 +171,33 @@ header .logo {
     font-weight: 600;
     text-transform: uppercase;
     z-index: 10;
+}
+
+@media (min-width: 2000px) {
+    #navigation {
+        right: -1500px;
+        width: 50%;
+    }
+
+    .navigation ul li a:before {
+        font-weight: 600;
+        font-size: 6em;
+    }
+
+    .banner.active {
+        transform: translateX(-20%);
+
+    }
+
+    #toggle::before {
+        height: 6px;
+    }
+    #toggle::after {
+        height: 6px;
+    }
+
+    #navigation ul li a {
+        font-size: 4em;
+    }
+    
 }

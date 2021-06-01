@@ -65,8 +65,8 @@ a {
 
 button {
     border-radius: 20px;
-    border: 1px solid #FF4B2B;
-    background-color: #FF4B2B;
+    border: 1px solid #fff;
+    background: linear-gradient(to bottom left, #00dbde,#fc00ff);
     color: #FFFFFF;
     font-size: 12px;
     font-weight: bold;
@@ -244,4 +244,13 @@ input {
     margin: 0 5px;
     height: 40px;
     width: 40px;
+}
+
+@media (min-width: 2000px) {
+    .block {
+        left: 1100px;
+        position: absolute;
+        width: 70px;
+        height: 70px;
+    }
 }
