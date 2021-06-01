@@ -5,23 +5,26 @@
 }
 
 .block {
+    left: 950px;
     position: absolute;
     width: 50px;
     height: 50px;
-    border-radius:50%;
-    background: #fcb045;
-    box-shadow: 10px 10px 30px rgba(0,0,0,0.25);
+    border-radius: 50%;
+    background: linear-gradient(to bottom left, #fcb045, #fd1d1d, #833ab4);
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.25);
 }
 
 .block:nth-child(3n + 2) {
-    background: #833ab4;
+    background: linear-gradient(#fd1d1d, #833ab4);
 }
 
 .block:nth-child(3n + 3) {
-    background: #fd1d1d;
+    background: linear-gradient(to bottom right,#fd1d1d, #fcb045);
 }
 
 body {
+    max-height:100vh ;
+    overflow: hidden;
     background: #f6f5f7;
     display: flex;
     justify-content: center;
@@ -113,6 +116,7 @@ input {
     position: relative;
     overflow: hidden;
     width: 768px;
+    left: 30%;
     max-width: 100%;
     min-height: 480px;
 }
