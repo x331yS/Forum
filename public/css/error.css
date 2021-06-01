@@ -36,17 +36,16 @@
     -webkit-transform: translateX(-50%);
     -ms-transform: translateX(-50%);
     transform: translateX(-50%);
-    background: #000;
+    background: linear-gradient(to bottom left,#fc00ff, #fc00ff, #00dbde, #fc00ff,#fc00ff);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-size: cover;
     background-position: center;
 }
 
-
 .notfound h2 {
+    color: #373B44;
     font-family: 'Poppins', sans-serif;
-    color: #000;
     font-size: 24px;
     font-weight: 700;
     text-transform: uppercase;
