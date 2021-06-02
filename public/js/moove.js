@@ -1,5 +1,5 @@
 const contain = document.querySelector('.fun')
-for (let i = 1; i <= 50; i++) {
+for (let i = 1; i <= 200; i++) {
     const blocks = document.createElement('div')
     blocks.classList.add('block')
     blocks.onclick=generate
@@ -9,10 +9,10 @@ function generate() {
     anime({
         targets: '.block',
         translateX: function () {
-            return anime.random(-800, 800)
+            return anime.random(-1000, 1000)
         },
         translateY: function () {
-            return anime.random(-400, 400)
+            return anime.random(-200, 8000)
         },
         scale: function () {
             return anime.random(1, 5)
@@ -20,3 +20,6 @@ function generate() {
     })
 }
 generate()
+
+//Check with team
+// setInterval(generate, 10000)

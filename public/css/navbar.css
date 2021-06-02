@@ -1,4 +1,5 @@
 header {
+    overflow-y: hidden;
     position: absolute;
     top: 0;
     left: 0;
@@ -61,7 +62,6 @@ header .logo {
 }
 
 
-
 .banner {
     position: relative;
     width: 100%;
@@ -76,7 +76,7 @@ header .logo {
 }
 
 .banner.active {
-    transform: translateX(-30%);
+    transform: translateX(-20%);
 
 }
 
@@ -102,7 +102,7 @@ header .logo {
     font-size: 3rem;
     padding: 5px 20px;
     display: inline-flex;
-    font-weight: 700;
+    font-weight: 600;
     transition: 0.5s;
 }
 
@@ -116,7 +116,7 @@ header .logo {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 4em;
+    font-size: 3em;
     color: rgb(0, 0, 0);
     border-radius: 50%;
     z-index: -1;
@@ -140,7 +140,7 @@ header .logo {
     position: fixed;
     top: 0;
     right: -800px;
-    width: 40%;
+    width: 30%;
     height: 100vh;
     z-index: 1;
     background: linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);
@@ -184,14 +184,10 @@ header .logo {
         font-size: 6em;
     }
 
-    .banner.active {
-        transform: translateX(-20%);
-
-    }
-
     #toggle::before {
         height: 6px;
     }
+
     #toggle::after {
         height: 6px;
     }
@@ -199,5 +195,5 @@ header .logo {
     #navigation ul li a {
         font-size: 4em;
     }
-    
+
 }

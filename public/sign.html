@@ -5,8 +5,19 @@
     <link rel="stylesheet" type="text/css" href="css/sign.css">
     <link rel="stylesheet" type="text/css" href="css/navbar.css">
 </head>
+<style>
+    body {
+        overflow: hidden;
+        animation: fadein 2s;
+    }
+
+    @keyframes fadein {
+        from { opacity: 0; }
+        to   { opacity: 1; }
+    }
+</style>
 <body>
-<section class="banner" id="sec">
+<section class="banner fun" id="sec">
     <header>
         <a href="/" class="logo">Pycture</a>
         <div id="toggle" onclick="toggle()"></div>

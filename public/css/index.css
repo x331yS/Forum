@@ -1,0 +1,80 @@
+body {
+    overflow-x: hidden;
+}
+
+.bann {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    background-size: cover;
+}
+body::-webkit-scrollbar {
+    display: none;
+}
+
+.bann .content h2 {
+    color: #f6f5f7;
+    position: relative;
+    max-width: 900px;
+    font-size: 5em;
+    text-align: center;
+
+}
+#flc {
+    position: relative;
+    width: 5%;
+    height: 5%;
+    left: 1100px;
+    bottom: 150px;
+}
+
+.banner.active #flc {
+    visibility: hidden;
+}
+.image {
+    position: absolute;
+    min-height: 100vh;
+    width: 100%;
+    background-size: initial;
+    background-image: linear-gradient(
+            to bottom,
+            rgba(255, 255, 255, 0) 70%,
+            #f6f5f7 100%
+    ),
+    url("/img/banner1.jpg");
+    background-repeat: no-repeat;
+    animation: fadein 3s;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+
+
+.btn {
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    font-size: 14px;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-radius: 20px;
+    background: linear-gradient(to bottom left, #00dbde, #fc00ff);
+    color: #f6f5f7;
+    left: 300px;
+    bottom: 50px;
+    display: inline-block;
+    padding: 10px 30px;
+    -webkit-box-shadow: 0 4px 15px -5px #fff;
+    box-shadow: 0 4px 15px -5px #fff;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.btn:hover {
+    filter: brightness(70%);
+}

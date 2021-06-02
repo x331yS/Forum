@@ -7,10 +7,21 @@
     <link rel="stylesheet" href="css/navbar.css"/>
     <link rel="stylesheet" href="css/error.css"/>
     <link rel="stylesheet" href="css/sign.css"/>
-    <title>Page not found</title>
+    <title>Page Not found</title>
 </head>
+<style>
+    body {
+        overflow: hidden;
+        animation: fadein 2s;
+    }
+
+    @keyframes fadein {
+        from { opacity: 0; }
+        to   { opacity: 1; }
+    }
+</style>
 <body>
-<section class="banner" id="sec">
+<section class="banner fun" id="sec">
 <header>
     <a href="/" class="logo">Pycture</a>
     <div id="toggle" onclick="toggle()"></div>
@@ -21,7 +32,6 @@
             <h1>Oops!</h1>
         </div>
         <h2><br/><br/>404 - Page not found</h2>
-<!--        <p>Sorry but that is a bad request.</p>-->
         <p>
             <a href="/">Back to Menu</a>
         </p>
