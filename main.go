@@ -6,5 +6,5 @@ import (
 
 func main() {
 	forum.CreateDatabase()
-	forum.Server()
+	forum.Static()
 }
