@@ -1,0 +1,11 @@
+.images {
+    margin: 6em;
+}
+body > .images {
+    width: 90%;
+    position: absolute;
+}
+
+.block {
+    z-index: -1;
+}
