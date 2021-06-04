@@ -5,15 +5,26 @@
     <link rel="stylesheet" type="text/css" href="css/sign.css">
     <link rel="stylesheet" type="text/css" href="css/navbar.css">
 </head>
+<style>
+    body {
+        overflow: hidden;
+        animation: fadein 2s;
+    }
+
+    @keyframes fadein {
+        from { opacity: 0; }
+        to   { opacity: 1; }
+    }
+</style>
 <body>
-<section class="banner" id="sec">
+<section class="banner fun" id="sec">
     <header>
         <a href="/" class="logo">Pycture</a>
         <div id="toggle" onclick="toggle()"></div>
     </header>
     <div class="container" id="container">
         <div class="form-container sign-up-container">
-            <form action="/">
+            <form action="/profil" method="POST">
                 <h1 onclick="generate()">Create Account</h1>
                 <span onclick="generate()">Or use your github for registration</span>
                 <input type="text" name="name" placeholder="Name">
@@ -23,7 +34,7 @@
             </form>
         </div>
         <div class="form-container sign-in-container">
-            <form action="#">
+            <form action="/signin" method="POST">
                 <h1 onclick="generate()">Sign In</h1>
                 <span onclick="generate()">Or use your github for registration</span>
                 <input type="email" name="email" placeholder="Email">

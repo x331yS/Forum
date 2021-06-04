@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pycture</title>
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/sign.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+</head>
+<body>
+<section class="banner" id="sec">
+    <header>
+        <a href="/" class="logo">Pycture</a>
+        <a class="navbarItems rightFour" href="/">Photographie</a>
+        <a class="navbarItems rightThree" href="/">Animals</a>
+        <a class="navbarItems rightTwo" href="/">Nature</a>
+        <a class="navbarItems right" href="/">Art</a>
+        <div id="toggle" onclick="toggle()"></div>
+    </header>
+
+    <div onclick="generate()" class="bann">
+        <div class="content">
+            <h2 class="animate__animated animate__pulse hom__hoover" onclick="generate()">Explore The World</h2>
+            <a href="/sign.html" class="btn">Sign In</a>
+            <i onclick="ChangeIt()" id="flc" class="gg-chevron-right"></i>
+        </div>
+    </div>
+</section>
+<div class="image"></div>
+<div class="fun"></div>
+
+
+<div class="navigation" id="navigation">
+    <ul>
+        <li><a href="/" data-text="Home">Home</a></li>
+        <li><a href="/404.html" data-text="Project">Project</a></li>
+        <li><a href="/" data-text="About">About</a></li>
+        <li><a href="/" data-text="Contact">Contact</a></li>
+    </ul>
+</div>
+</body>
+<script src="js/anime.min.js"></script>
+<script src="js/moove.js"></script>
+<script src="js/bg-image.js"></script>
+<script src="js/toggle.js"></script>
+<script>
+    // $('#gallery').justifiedGallery({
+    //     rowHeight : 200,
+    //     lastRow : 'nojustify',
+    //     margins : 12
+    // });
+    // external js: masonry.pkgd.js, imagesloaded.pkgd.js
+
+    // init Masonry
+    // var grid = document.querySelector('.grid');
+    //
+    // var msnry = new Masonry( grid, {
+    //     itemSelector: '.grid-item',
+    //     columnWidth: '.grid-sizer',
+    //     percentPosition: true
+    // });
+    //
+    // imagesLoaded( grid ).on( 'progress', function() {
+    //     // layout Masonry after each image loads
+    //     msnry.layout();
+    // });
+</script>
+</html>

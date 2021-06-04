@@ -24,8 +24,7 @@
 
 body {
     max-height:100vh ;
-    overflow: hidden;
-    background: #f6f5f7;
+    background: #333333;
     display: flex;
     justify-content: center;
     align-items: center;
