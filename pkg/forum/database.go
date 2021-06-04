@@ -2,6 +2,7 @@ package forum
 
 import (
 	"database/sql"
+	// "github.com/gofiber/storage/sqlite3"
 	_ "github.com/mattn/go-sqlite3"
 )
 
@@ -23,7 +24,13 @@ func AddUser(user User) {
 	statement.Exec(user.Name, user.Email, user.Password)
 }
 
-func ScanUser() {
-	var database, _ = sql.Open("sqlite3", "./database.db")
-	var rows, _ = database.Query("select name, email, password from user")
-}
+// func FiberDb() {
+// 	// Initialize default config
+// 	store := sqlite3.New()
+// 	store.Set
+// }
+
+// func ScanUser() {
+// 	var database, _ = sql.Open("sqlite3", "./database.db")
+// 	var rows, _ = database.Query("select name, email, password from user")
+// }
