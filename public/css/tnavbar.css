@@ -23,6 +23,7 @@ header {
 }
 
 header .logo {
+    left: 50px;
     position: relative;
     font-weight: 700;
     color: #f6f5f7;
@@ -33,7 +34,7 @@ header .logo {
 }
 
 #toggle {
-    left: 33px;
+    left: 16px;
     top: 30px;
     position: relative;
     width: 30px;
