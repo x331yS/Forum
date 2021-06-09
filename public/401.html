@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+  <link rel="stylesheet" href="css/navbar.css"/>
+  <link rel="stylesheet" href="css/error.css"/>
+  <link rel="stylesheet" href="css/sign.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+  <title>Unauthorized Page</title>
+</head>
+<style>
+  body {
+    overflow: hidden;
+    animation: fadein 2s;
+  }
+
+  @keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+</style>
+<body>
+<section class="banner fun" id="sec">
+  <header>
+    <img src="img/logo.png" width="100" height="100">
+    <a href="/" class="logo">Pycture</a>
+    <div id="toggle" onclick="toggle()"></div>
+  </header>
+  <div onclick="generate()" id="notfound">
+    <div class="notfound">
+      <div class="animate__animated animate__pulse notfound-404">
+        <h1>Oops!</h1>
+      </div>
+      <h2><br/><br/>401 - Unauthorized</h2>
+      <p>
+        <a href="/">Back to Menu</a>
+      </p>
+    </div>
+  </div>
+</section>
+<div class="navigation" id="navigation">
+  <ul>
+    <li><a href="/" data-text="Home">Home</a></li>
+    <li><a href="/" data-text="Project">Project</a></li>
+    <li><a href="/sign.html" data-text="Profil">Profil</a></li>
+    <li><a href="/" data-text="Contact">Contact</a></li>
+  </ul>
+</div>
+
+<script src="js/anime.min.js"></script>
+<script src="js/toggle.js"></script>
+<script src="js/bubble.js"></script>
+</body>
+</html>
