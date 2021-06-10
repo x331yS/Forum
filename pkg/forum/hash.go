@@ -2,17 +2,18 @@ package forum
 
 import (
     "golang.org/x/crypto/bcrypt"
-    "encoding/base64"
 )
 
-func HashPassword(clearPasswordString string) string {
-    var clearPasswordBytes = []byte(clearPasswordString)
-    var hashedPasswordBytes, _ = bcrypt.GenerateFromPassword(clearPasswordBytes, bcrypt.MinCost)
-    var hashedPasswordString = base64.URLEncoding.EncodeToString(hashedPasswordBytes)
-    return hashedPasswordString
+func HashPassword(clear string) string {
+	var hash, _ = bcrypt.GenerateFromPassword([]byte(clear), 2)
+	return string(hash)
 }
 
-// func HashPassword2(clear string) []byte {
-//     var hash = sha256.Sum256([]byte(clear))
-//     return hash[:]
-// }
+func CheckPasswordHash(hash string, clear string) bool {
+    var err = bcrypt.CompareHashAndPassword([]byte(hash), []byte(clear))
+    if err == nil {
+        return true
+    } else {
+        return false
+    }
+}
