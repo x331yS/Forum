@@ -1,5 +1,5 @@
 const contain = document.querySelector('.fun')
-for (let i = 1; i <= 300; i++) {
+for (let i = 1; i <= 100; i++) {
     const blocks = document.createElement('div')
     blocks.classList.add('block')
     blocks.onclick=generate
@@ -12,7 +12,7 @@ function generate() {
             return anime.random(-1100, 1100)
         },
         translateY: function () {
-            return anime.random(-100, 8000)
+            return anime.random(-100, 800)
         },
         scale: function () {
             return anime.random(1, 5)
