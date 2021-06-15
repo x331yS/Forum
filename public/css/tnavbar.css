@@ -1,21 +1,14 @@
 header {
-    position: absolute;
-    top: 0;
+    /*top: -800px;*/
+    margin-top: -30px;
     left: 0;
+    margin-left: -8px;
     width: 100%;
     display: flex;
     justify-content: space-between;
     padding: 30px 80px;
     z-index: 10000;
     transition: 0.6s;
-}
-
-img {
-    left: 15px;
-    top: 17px;
-    position: absolute;
-
-
 }
 
 .navbarItems {
@@ -27,22 +20,6 @@ img {
     font-size: 20px;
     top: 16px;
     transition: 0.6s;
-}
-
-.right {
-    left: 100px;
-}
-
-.rightTwo {
-    left: 200px;
-}
-
-.rightThree {
-    left: 300px;
-}
-
-.rightFour {
-    left: 400px;
 }
 
 header .logo {
@@ -57,6 +34,7 @@ header .logo {
 }
 
 #toggle {
+    left: 16px;
     top: 30px;
     position: relative;
     width: 30px;
@@ -98,12 +76,10 @@ header .logo {
 
 
 .banner {
-    position: relative;
+    position: sticky;
+    top: 10px;
     width: 100%;
-    min-height: 100vh;
-    padding: 100px;
     background-size: cover;
-    display: flex;
     align-items: center;
     transition: 0.5s;
     z-index: 2;
@@ -112,7 +88,6 @@ header .logo {
 
 .banner.active {
     transform: translateX(-20%);
-
 }
 
 .navigation {
