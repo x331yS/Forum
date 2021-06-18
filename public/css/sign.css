@@ -253,3 +253,8 @@ input {
         height: 70px;
     }
 }
+@media (max-width: 1000px) {
+    .container {
+        left: 0;
+    }
+}

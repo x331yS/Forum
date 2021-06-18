@@ -13,6 +13,12 @@
     transform: translateX(-22%);
 
 }
+header {
+    padding: 63px 80px;
+}
+img {
+    top: 50px;
+}
 
 .notfound {
     max-width: 410px;
@@ -60,6 +66,9 @@
     margin-bottom: 20px;
     margin-top: 0;
 }
+.miner {
+    visibility: hidden;
+}
 
 .notfound a {
     font-family: 'Poppins', sans-serif;
@@ -79,16 +88,28 @@
 }
 
 
-@media only screen and (max-width: 767px) {
+@media (max-width: 1000px) {
+    #toggle {
+        visibility: hidden;
+    }
     .notfound .notfound-404 {
-        height: 142px;
+        height: 102px;
     }
 
     .notfound .notfound-404 h1 {
-        font-size: 112px;
+        font-size: 100px;
     }
     .notfound h2 {
         font-size: 20px;
 
+    }
+    .notfound a {
+        -webkit-box-shadow: 0 4px 5px -5px #fff;
+        box-shadow: 0 2px 2px -4px #fff;
+    }
+    .miner {
+        visibility: initial;
+        left: 250px;
+        top: 1200px;
     }
 }

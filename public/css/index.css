@@ -60,6 +60,7 @@ body::-webkit-scrollbar {
 .image {
     position: absolute;
     min-height: 100vh;
+    /*min-width: 100vh;*/
     z-index: -1;
     width: 100%;
     background-size: initial;
@@ -99,4 +100,21 @@ body::-webkit-scrollbar {
 
 .btn:hover {
     filter: brightness(70%);
+}
+@media (max-width: 1000px) {
+    #flc {
+        /*visibility: hidden;*/
+        left: 800px;
+        bottom: 170px;
+        color: #f6f5f7;
+    }
+    .image {
+        background-image: linear-gradient(
+                to bottom,
+                rgba(255, 255, 255, 0) 70%,
+                #333333 100%
+        ),
+        url("/img/banner5phone.jpg");
+    }
+/*  **** >=  Mobile L*/
 }

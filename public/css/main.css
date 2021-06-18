@@ -145,3 +145,12 @@ img {
     opacity:1;
     box-shadow:0 8px 20px 0 rgba(0,0,0,0.125);
 }
+
+@media (max-width: 1000px) {
+    .icon {
+        visibility: hidden;
+    }
+    .search {
+        visibility: hidden;
+    }
+}
