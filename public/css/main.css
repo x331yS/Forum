@@ -151,6 +151,11 @@ img {
         visibility: hidden;
     }
     .search {
+        left: 150px;
         visibility: hidden;
+    }
+    body > .images {
+        width: 95%;
+        position: absolute;
     }
 }

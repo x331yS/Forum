@@ -5,9 +5,6 @@ function ChangeIt() {
         'url("/img/banner3phone.jpg")',
         'url("/img/banner4phone.jpg")',
         'url("/img/banner5phone.jpg")'
-        // 'url("/img/banner6phone.jpg")',
-        // 'url("/img/banner7phone.jpg")',
-        // 'url("/img/banner8phone.jpg")'
     ]
     const section = document.querySelector(".image")
     section.style.backgroundImage = "linear-gradient(\n" +
