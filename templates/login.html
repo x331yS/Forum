@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Log in</title>
+    <!-- <link rel="stylesheet" href="/static/css/style.css"> -->
+    <link rel="stylesheet" href="/static/css/temp.css">
+</head>
+
+<body>
+    <nav>
+        <a href="/"><img src="/img/logo.png"></a>
+        <ul>
+            <li><a href="/home">Home</a></li>
+            <li><a href="/search">Search</a></li>
+            <li><a href="/notifications">Notifications</a></li>
+            <li><a href="/profile">Profile</a></li>
+        </ul>
+    </nav>
+    <form name="login" action="/auth/login" method="post">
+        <ul>
+            <li><input type="text" name="name" placeholder="Name"></li>
+            <li><input type="email" name="email" placeholder="Email"></li>
+            <li><input type="password" name="password" placeholder="Password"></li>
+            <li><input type="submit"></li>
+        </ul>
+    </form>
+</body>
+
+</html>

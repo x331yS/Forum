@@ -3,27 +3,39 @@ package forum
 import (
 	"database/sql"
 	_ "github.com/mattn/go-sqlite3"
+	// "fmt"
 )
 
-type User struct {
-	Name     string
-	Email    string
-	Password string
-}
-
 func CreateDatabase() {
-	var database, _ = sql.Open("sqlite3", "./database.db")
-	var statement, _ = database.Prepare("create table if not exists user (id integer primary key, name text, email text, password text)")
+	var Database, _ = sql.Open("sqlite3", "./database.db")
+	var statement, _ = Database.Prepare("CREATE TABLE IF NOT EXISTS user (id INTEGER PRIMARY KEY, name TEXT, email TEXT, password TEXT)")
 	statement.Exec()
 }
 
-func AddUser(user User) {
-	var database, _ = sql.Open("sqlite3", "./database.db")
-	var statement, _ = database.Prepare("insert into user (name, email, password) values (?, ?, ?)")
-	statement.Exec(user.Name, user.Email, user.Password)
+func AddUser(Data RegisterData) {
+	var Database, _ = sql.Open("sqlite3", "./database.db")
+	var statement, _ = Database.Prepare("INSERT INTO user (name, email, password) VALUES (?, ?, ?)")
+	statement.Exec(Data.Name, Data.Email, Data.Password)
 }
 
-func ScanUser() {
-	var database, _ = sql.Open("sqlite3", "./database.db")
-	var rows, _ = database.Query("select name, email, password from user")
+func CheckUserName(Data RegisterData) bool {
+	var Database, _ = sql.Open("sqlite3", "./database.db")
+	var row = Database.QueryRow("SELECT name FROM user WHERE name=?", Data.Name)
+	if err := row.Scan(); err != nil {
+		if err == sql.ErrNoRows {
+			return true
+		}
+	}
+	return false
+}
+
+func CheckUserEmail(Data RegisterData) bool {
+	var Database, _ = sql.Open("sqlite3", "./database.db")
+	var row = Database.QueryRow("SELECT email FROM user WHERE email=?", Data.Email)
+	if err := row.Scan(); err != nil {
+		if err == sql.ErrNoRows {
+			return true
+		}
+	}
+	return false
 }
