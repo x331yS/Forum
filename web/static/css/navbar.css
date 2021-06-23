@@ -16,6 +16,19 @@ img {
     position: absolute;
 }
 
+.hov:hover {
+    background: -webkit-linear-gradient( #fcb045, #fd1d1d, #833ab4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+}
+.hover:hover {
+    background: -webkit-linear-gradient( #00dbde,#fc00ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+}
+
 header .logo {
     left: 50px;
     position: relative;

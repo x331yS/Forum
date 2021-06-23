@@ -157,28 +157,6 @@ func createAllTables(database *sql.DB) error {
 
 	if _, err := tx.Exec(`
 	INSERT INTO category (name) 
-	VALUES (?)`, "Programming"); err != nil {
-		if sqliteErr, ok := err.(sqlite.Error); ok {
-			if sqliteErr.Code != sqlite.ErrConstraint {
-				tx.Rollback()
-				return err
-			}
-		}
-	}
-
-	if _, err := tx.Exec(`
-	INSERT INTO category (name) 
-	VALUES (?)`, "Video-Game"); err != nil {
-		if sqliteErr, ok := err.(sqlite.Error); ok {
-			if sqliteErr.Code != sqlite.ErrConstraint {
-				tx.Rollback()
-				return err
-			}
-		}
-	}
-
-	if _, err := tx.Exec(`
-	INSERT INTO category (name) 
 	VALUES (?)`, "Art"); err != nil {
 		if sqliteErr, ok := err.(sqlite.Error); ok {
 			if sqliteErr.Code != sqlite.ErrConstraint {
@@ -190,7 +168,29 @@ func createAllTables(database *sql.DB) error {
 
 	if _, err := tx.Exec(`
 	INSERT INTO category (name) 
-	VALUES (?)`, "Food"); err != nil {
+	VALUES (?)`, "Landscape"); err != nil {
+		if sqliteErr, ok := err.(sqlite.Error); ok {
+			if sqliteErr.Code != sqlite.ErrConstraint {
+				tx.Rollback()
+				return err
+			}
+		}
+	}
+
+	if _, err := tx.Exec(`
+	INSERT INTO category (name) 
+	VALUES (?)`, "Animals"); err != nil {
+		if sqliteErr, ok := err.(sqlite.Error); ok {
+			if sqliteErr.Code != sqlite.ErrConstraint {
+				tx.Rollback()
+				return err
+			}
+		}
+	}
+
+	if _, err := tx.Exec(`
+	INSERT INTO category (name) 
+	VALUES (?)`, "Nature"); err != nil {
 		if sqliteErr, ok := err.(sqlite.Error); ok {
 			if sqliteErr.Code != sqlite.ErrConstraint {
 				tx.Rollback()
@@ -201,3 +201,4 @@ func createAllTables(database *sql.DB) error {
 
 	return tx.Commit()
 }
+

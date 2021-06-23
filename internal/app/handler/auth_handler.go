@@ -80,3 +80,4 @@ func (h *Handler) LogOut(w http.ResponseWriter, r *http.Request) {
 		writeResponse(w, http.StatusBadRequest, "Bad Method")
 	}
 }
+

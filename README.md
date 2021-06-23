@@ -1,21 +1,25 @@
 # forum
 
-A web forum application that allows :
+This project consists in creating a web forum that allows:
+* communication between users.
+* associating categories to posts.
+* liking and disliking posts and comments.
+* filtering posts.
 
-* communication between users
-* associating categories to posts
-* liking and disliking posts and comments
-* filtering posts
 
-Built using Go and SQLite for the back-end, and HTML, CSS and JavaScript for the front-end.
+### To run:
 
-## Run
-
-The `go mod init` command initializes dependencies for our program.
+```go
+go run cmd/app/main.go
+OR
+make && ./forum
+``` 
+**To run in Docker:**
 
 ```
-go mod init github.com/anatolethien/forum
-go run main.go
-```
+1.docker build -t <custom name of the image> .
 
-Then, head to [127.0.0.1:17555](http://127.0.0.1:17555/)
+2.docker container run -p :17555 --name <custom name of the container> <name of the image>
+``` 
+
+

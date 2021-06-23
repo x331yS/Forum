@@ -4,6 +4,7 @@ import (
 	"database/sql"
 	"errors"
 	"fmt"
+	uuid "github.com/satori/go.uuid"
 	"io"
 	"mime/multipart"
 	"net/http"
@@ -15,7 +16,6 @@ import (
 
 	"github.com/anatolethien/forum/internal/app/models"
 	"github.com/anatolethien/forum/internal/app/repository"
-	uuid "github.com/satori/go.uuid"
 )
 
 type PostService struct {
@@ -74,10 +74,8 @@ func (ps *PostService) GenerateImagesFromFiles(files []*multipart.FileHeader) ([
 		if err != nil {
 			return nil, err
 		}
-
 		imageName := uuid.NewV4().String()
-		destImage := fmt.Sprintf("/images/%s%s", imageName, filepath.Ext(files[i].Filename))
-
+		destImage := fmt.Sprintf("/images/%d%s", imageName, filepath.Ext(files[i].Filename))
 		dst, err := os.Create("./assets" + destImage)
 		if err != nil {
 			return nil, err

@@ -3,6 +3,7 @@ package handler
 import (
 	"fmt"
 	"html/template"
+	"math/rand"
 	"net/http"
 
 	"github.com/anatolethien/forum/internal/app/models"
@@ -12,7 +13,6 @@ func (h *Handler) CreatePost() http.HandlerFunc {
 	type viewData struct {
 		Categories []string
 	}
-
 	const maxUploadImage = 20 * 1024 * 1024
 
 	return func(w http.ResponseWriter, r *http.Request) {
@@ -24,6 +24,7 @@ func (h *Handler) CreatePost() http.HandlerFunc {
 			} else {
 				tmpl.Execute(w, viewData{categories})
 			}
+
 		case "POST":
 			c, _ := r.Cookie("forum")
 			userID, err := h.services.User.GetUserIDByToken(c.Value)
@@ -44,7 +45,7 @@ func (h *Handler) CreatePost() http.HandlerFunc {
 				UserID:     userID,
 				Title:      r.FormValue("title"),
 				Content:    r.FormValue("content"),
-					Categories: r.Form["categories"],
+				Categories: r.Form["categories"],
 			}
 
 			formdata := r.MultipartForm
@@ -79,11 +80,11 @@ func (h *Handler) CreatePost() http.HandlerFunc {
 
 func (h *Handler) GetPost() http.HandlerFunc {
 	type viewData struct {
-		Post     *models.Post
-		PostID   int
-		LoggedIn bool
+		Aleatoire int
+		Post      *models.Post
+		PostID    int
+		LoggedIn  bool
 	}
-
 	return func(w http.ResponseWriter, r *http.Request) {
 		switch r.Method {
 		case "GET":
@@ -93,8 +94,10 @@ func (h *Handler) GetPost() http.HandlerFunc {
 			} else {
 				tmpl := template.Must(template.ParseFiles("./web/template/view_post.html"))
 				ok := IsLoggedUser(r)
-				viewData := viewData{post, post.ID, ok}
-				tmpl.Execute(w, viewData)
+				max := 8
+				min := 1
+				aleatoire := rand.Intn(max-min) + min
+				tmpl.Execute(w, viewData{aleatoire, post, post.ID, ok})
 			}
 		default:
 			writeResponse(w, http.StatusBadRequest, "Bad Method")
@@ -135,7 +138,7 @@ func (h *Handler) Filter() http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		switch r.Method {
 		case "GET":
-			tmpl := template.Must(template.ParseFiles("./web/template/index.html"))
+			tmpl := template.Must(template.ParseFiles("./web/template/home.html"))
 			field := getFiltersFieldFromURL(r.URL.Path)
 
 			userID := 0
@@ -153,7 +156,7 @@ func (h *Handler) Filter() http.HandlerFunc {
 			posts, err := h.services.Post.Filter(field, userID)
 			if err != nil {
 				if err.Error() == "Unauthorized" {
-					http.Redirect(w, r, "/signin", http.StatusFound)
+					http.Redirect(w, r, "/login", http.StatusFound)
 				} else {
 					writeResponse(w, http.StatusInternalServerError, err.Error())
 				}

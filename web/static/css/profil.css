@@ -1,0 +1,67 @@
+.maindiv {
+    z-index: 1000;
+    width: 30%;
+    height: 80%;
+    background-color: #FFFFFF;
+    margin-top: 10%;
+}
+
+.profilpict {
+    width:25%;
+    margin-top: 5%;
+    border: solid;
+}
+
+.banner.active .maindiv{
+    transform: translateX(-20%);
+}
+
+.bg-white {
+    background-color: #eeeeee
+}
+
+.divide-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.divide-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.infos {
+    justify-content: space-evenly;
+}
+
+.pos {
+    position: absolute;
+}
+
+.name {
+    font-size: 200%;
+    margin-left: 20%;
+    margin-top: 5%;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    margin: auto;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    font-size: 22px;
+    color: black;
+}
+
+button:hover, a:hover {
+    opacity: 0.7;
+}
+
+.gradient-border {
+    border: 4px solid;
+    border-radius: 10px;
+    border-image: conic-gradient(#00dbde,#fc00ff, #00dbde) 1;
+}

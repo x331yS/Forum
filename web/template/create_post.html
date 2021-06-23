@@ -22,14 +22,20 @@
     <div class="postcard" id="wrapper">
         <div id="page">
             <div id="content">
+                <h2> Share a mood, or a picture ! </h2>
                 <form action="/post/create" enctype="multipart/form-data" method="POST">
-                    <input type="text" name="title" placeholder="title"><br>
+                    <input type="text" name="title" placeholder="Title of post">
+                    <br>
+                    <div class="categories">
                     {{ range .Categories }}
-                    <input type="checkbox" name="categories" value="{{.}}" style="width: unset;">{{.}}
-                    {{ end }}<br>
-                    <textarea name="content" placeholder="content..."></textarea><br>
+                    <input type="checkbox" name="categories" value="{{.}}" class="selection">{{.}}
+                    {{ end }}
+                    </div>
+                    </br>
+
+                    <textarea rows="10" cols="60" name="content" placeholder="Add a few description of your picture..." class="typecontainer"></textarea><br>
                     <input type="file" name="files" multiple>
-                    <input type="submit" class="links more" value="create post" style="float:none; display: inline">
+                    <button type="submit" class="links more" >Create a post</button>
                 </form>
             </div>
             <div style="clear: both;">&nbsp;</div>
