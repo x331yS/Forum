@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Pycture</title>
+    <link rel="icon" href="../static/img/logo.ico" />
+    <link rel="stylesheet" href="../static/css/navbar.css">
+    <link rel="stylesheet" href="../static/css/sign.css">
+    <link rel="stylesheet" href="../static/css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+</head>
+<body>
+<section class="banner" id="sec">
+    <header>
+        <img src="../static/img/logo.png" width="100" height="100">
+        <a href="/" class="logo">Pycture</a>
+        {{if .LoggedIn}}
+        <a href="/logout" class="logo">Log Out</a>
+        {{else}}
+        <a href="/login" class="logo">Login</a>
+        {{end}}
+    </header>
+
+    <div onclick="generate()" class="bann">
+        <div class="content">
+            <h2 class="animate__animated animate__pulse hom__hoover" onclick="generate()">Explore The World</h2>
+            <a href="/home" class="btn">Travel</a>
+            <i onclick="ChangeIt()" id="flc" class="gg-chevron-right"></i>
+        </div>
+    </div>
+
+</section>
+
+
+<div class="image"></div>
+<div class="fun"></div>
+</body>
+<script src="../static/js/size.js"></script>
+<script src="../static/js/anime.min.js"></script>
+<script src="../static/js/resizebg.js" ></script>
+<script>ChangeIt()</script>
+<!--<script src="js/bg-image.js"></script>-->
+<script src="../static/js/toggle.js"></script>
+</html>
