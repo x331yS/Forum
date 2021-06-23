@@ -5,8 +5,8 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/anatolethien/forum/internal/app/models"
-	"github.com/anatolethien/forum/internal/app/repository"
+	"github.com/anatolethien/forum/pkg/models"
+	"github.com/anatolethien/forum/pkg/repository"
 )
 
 type CommentService struct {

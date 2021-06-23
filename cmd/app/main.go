@@ -2,7 +2,7 @@ package main
 
 import (
 	"flag"
-	"github.com/anatolethien/forum/internal/app/server"
+	"github.com/anatolethien/forum/pkg/server"
 	"log"
 )
 

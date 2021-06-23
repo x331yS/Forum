@@ -3,7 +3,7 @@ package repository
 import (
 	"database/sql"
 
-	"github.com/anatolethien/forum/internal/app/models"
+	"github.com/anatolethien/forum/pkg/models"
 )
 
 type User interface {

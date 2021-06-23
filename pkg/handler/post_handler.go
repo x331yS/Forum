@@ -6,7 +6,7 @@ import (
 	"math/rand"
 	"net/http"
 
-	"github.com/anatolethien/forum/internal/app/models"
+	"github.com/anatolethien/forum/pkg/models"
 )
 
 func (h *Handler) CreatePost() http.HandlerFunc {

@@ -3,7 +3,7 @@ package repository
 import (
 	"database/sql"
 
-	"github.com/anatolethien/forum/internal/app/models"
+	"github.com/anatolethien/forum/pkg/models"
 )
 
 type PostRepository struct {
@@ -22,7 +22,7 @@ func (pr *PostRepository) Create(post *models.Post) (int64, error) {
 	}
 
 	result, err := tx.Exec(`
-	INSERT INTO post (user_id,title,content,likes,dislikes,created_date,updated_date) 
+	INSERT INTO post (user_id,title,content,likes,dislikes,created_date,updated_date)
 	VALUES (?,?,?,?,?,?,?)`, post.UserID, post.Title, post.Content, post.Likes, post.Dislikes, post.CreatedDate, post.UpdatedDate)
 	if err != nil {
 		tx.Rollback()
@@ -96,7 +96,7 @@ func (pr *PostRepository) CreateImage(id int, path string) error {
 	}
 
 	_, err = tx.Exec(`
-	INSERT INTO post_images (post_id,path) 
+	INSERT INTO post_images (post_id,path)
 	VALUES (?,?)`, id, path)
 	if err != nil {
 		tx.Rollback()
@@ -187,10 +187,10 @@ func (pr *PostRepository) GetPostsByCategory(category string) ([]*models.Post, e
 	posts := []*models.Post{}
 
 	rows, err := pr.db.Query(`
-	SELECT post.id, user_id,title,content,likes,dislikes,post.created_date,updated_date,user.username 
-	FROM post 
-	INNER JOIN user ON user_id=user.id 
-	INNER JOIN category_posts ON category_posts.post_id = post.id 
+	SELECT post.id, user_id,title,content,likes,dislikes,post.created_date,updated_date,user.username
+	FROM post
+	INNER JOIN user ON user_id=user.id
+	INNER JOIN category_posts ON category_posts.post_id = post.id
 	WHERE category_posts.category_name = ?
 	`, category)
 	if err != nil {
@@ -222,9 +222,9 @@ func (pr *PostRepository) GetMyCreatedPosts(id int) ([]*models.Post, error) {
 	posts := []*models.Post{}
 
 	rows, err := pr.db.Query(`
-	SELECT post.id, user_id,title,content,likes,dislikes,post.created_date,updated_date,user.username 
-	FROM post 
-	INNER JOIN user ON user_id=user.id 
+	SELECT post.id, user_id,title,content,likes,dislikes,post.created_date,updated_date,user.username
+	FROM post
+	INNER JOIN user ON user_id=user.id
 	WHERE user_id = ?
 	`, id)
 	if err != nil {
@@ -257,8 +257,8 @@ func (pr *PostRepository) GetMyLikedPosts(id int) ([]*models.Post, error) {
 
 	rows, err := pr.db.Query(`
 	SELECT post.id,title,content,likes,dislikes,post.created_date,updated_date,user.username
-	FROM post 
-	INNER JOIN post_votes ON post_votes.post_id = post.id 
+	FROM post
+	INNER JOIN post_votes ON post_votes.post_id = post.id
 	INNER JOIN user ON user.id = post.user_id
 	WHERE type = 'like' AND post_votes.user_id = ?
 	`, id)
@@ -301,7 +301,7 @@ func (pr *PostRepository) EstimatePost(post *models.Post, types string) error {
 	}
 	if typ == "" {
 		_, err = tx.Exec(`
-		INSERT INTO post_votes (user_id,post_id,type) 
+		INSERT INTO post_votes (user_id,post_id,type)
 		VALUES (?,?,?)`, post.UserID, post.ID, types)
 		if err != nil {
 			tx.Rollback()

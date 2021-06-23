@@ -3,7 +3,7 @@ package repository
 import (
 	"database/sql"
 
-	"github.com/anatolethien/forum/internal/app/models"
+	"github.com/anatolethien/forum/pkg/models"
 )
 
 type UserRepository struct {
@@ -16,7 +16,7 @@ func NewUserRepository(db *sql.DB) *UserRepository {
 
 func (ur *UserRepository) CreateUser(user *models.User) (int64, error) {
 	result, err := ur.db.Exec(`
-	INSERT INTO user (email,username,password,role,created_date) 
+	INSERT INTO user (email,username,password,role,created_date)
 	VALUES (?,?,?,?,?)`, user.Email, user.Username, user.Password, user.Role, user.CreatedDate)
 	if err != nil {
 		return -1, err
@@ -56,7 +56,7 @@ func (ur *UserRepository) GetUserByID(id int) (*models.User, error) {
 
 func (ur *UserRepository) CreateSession(session *models.Session) error {
 	if _, err := ur.db.Exec(`
-	INSERT INTO session (user_id,token,exp_time) 
+	INSERT INTO session (user_id,token,exp_time)
 	VALUES (?,?,?)`, session.UserID, session.Token, session.ExpTime); err != nil {
 		return err
 	}

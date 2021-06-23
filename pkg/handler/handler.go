@@ -3,7 +3,7 @@ package handler
 import (
 	"net/http"
 
-	"github.com/anatolethien/forum/internal/app/service"
+	"github.com/anatolethien/forum/pkg/service"
 )
 
 type Handler struct {

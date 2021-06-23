@@ -6,10 +6,10 @@ import (
 	"os"
 	"time"
 
-	"github.com/anatolethien/forum/internal/app/repository"
-	"github.com/anatolethien/forum/internal/app/service"
+	"github.com/anatolethien/forum/pkg/repository"
+	"github.com/anatolethien/forum/pkg/service"
 
-	"github.com/anatolethien/forum/internal/app/handler"
+	"github.com/anatolethien/forum/pkg/handler"
 )
 
 type Server struct {

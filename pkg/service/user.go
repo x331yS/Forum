@@ -9,8 +9,8 @@ import (
 
 	uuid "github.com/satori/go.uuid"
 
-	"github.com/anatolethien/forum/internal/app/models"
-	"github.com/anatolethien/forum/internal/app/repository"
+	"github.com/anatolethien/forum/pkg/models"
+	"github.com/anatolethien/forum/pkg/repository"
 	"golang.org/x/crypto/bcrypt"
 
 	sqlite "github.com/mattn/go-sqlite3"

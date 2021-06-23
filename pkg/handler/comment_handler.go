@@ -3,7 +3,7 @@ package handler
 import (
 	"net/http"
 
-	"github.com/anatolethien/forum/internal/app/models"
+	"github.com/anatolethien/forum/pkg/models"
 )
 
 func (h *Handler) CreateComment(w http.ResponseWriter, r *http.Request) {

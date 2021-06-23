@@ -3,7 +3,7 @@ package repository
 import (
 	"database/sql"
 
-	"github.com/anatolethien/forum/internal/app/models"
+	"github.com/anatolethien/forum/pkg/models"
 )
 
 type CommentRepository struct {
@@ -22,7 +22,7 @@ func (cr *CommentRepository) Create(comment *models.Comment) (int64, error) {
 	}
 
 	result, err := tx.Exec(`
-	INSERT INTO comment (user_id,post_id,content,likes,dislikes,created_date,updated_date) 
+	INSERT INTO comment (user_id,post_id,content,likes,dislikes,created_date,updated_date)
 	VALUES (?,?,?,?,?,?,?)`,
 		comment.UserID, comment.PostID, comment.Content, comment.Likes, comment.Dislikes, comment.CreatedDate, comment.UpdatedDate)
 	if err != nil {
@@ -58,7 +58,7 @@ func (cr *CommentRepository) EstimateComment(comment *models.Comment, types stri
 
 	if typ == "" {
 		_, err = tx.Exec(`
-		INSERT INTO comment_votes (user_id,comment_id,type) 
+		INSERT INTO comment_votes (user_id,comment_id,type)
 		VALUES (?,?,?)`, comment.UserID, comment.ID, types)
 		if err != nil {
 			tx.Rollback()

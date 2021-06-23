@@ -1,5 +1,5 @@
 {
     "addr": ":17555",
-    "db_path": "./assets/db/forum.db",
+    "db_path": "./assets/database.db",
     "db_driver": "sqlite3"
 }

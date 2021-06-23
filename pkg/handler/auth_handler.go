@@ -4,7 +4,7 @@ import (
 	"html/template"
 	"net/http"
 
-	"github.com/anatolethien/forum/internal/app/models"
+	"github.com/anatolethien/forum/pkg/models"
 )
 
 func (h *Handler) Register(w http.ResponseWriter, r *http.Request) {
@@ -80,4 +80,3 @@ func (h *Handler) LogOut(w http.ResponseWriter, r *http.Request) {
 		writeResponse(w, http.StatusBadRequest, "Bad Method")
 	}
 }
-
