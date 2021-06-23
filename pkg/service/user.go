@@ -122,7 +122,7 @@ func (us *UserService) validateParams(user *models.User) error {
 		return errors.New("Invalid Username")
 	}
 
-	if len(user.Password) < 6 {
+	if len(user.Password) < 2 {
 		return errors.New("Invalid Password")
 	}
 
