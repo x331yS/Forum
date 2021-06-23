@@ -21,7 +21,7 @@ func (h *Handler) Home() http.HandlerFunc {
 				writeResponse(w, http.StatusNotFound, "Page Not Found")
 				return
 			}
-			tmpl := template.Must(template.ParseFiles("./web/template/home.html"))
+			tmpl := template.Must(template.ParseFiles("./public/template/home.html"))
 			posts, err := h.services.Post.GetAll()
 			if err != nil {
 				writeResponse(w, http.StatusInternalServerError, err.Error())
@@ -53,7 +53,7 @@ func (h *Handler) Index() http.HandlerFunc {
 				writeResponse(w, http.StatusNotFound, "Page Not Found")
 				return
 			}
-			tmpl := template.Must(template.ParseFiles("./web/template/index.html"))
+			tmpl := template.Must(template.ParseFiles("./public/template/index.html"))
 			posts, err := h.services.Post.GetAll()
 			if err != nil {
 				writeResponse(w, http.StatusInternalServerError, err.Error())

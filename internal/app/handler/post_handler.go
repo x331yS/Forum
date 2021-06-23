@@ -18,7 +18,7 @@ func (h *Handler) CreatePost() http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		switch r.Method {
 		case "GET":
-			tmpl := template.Must(template.ParseFiles("./web/template/create_post.html"))
+			tmpl := template.Must(template.ParseFiles("./public/template/create_post.html"))
 			if categories, err := h.services.Post.GetValidCategories(); err != nil {
 				writeResponse(w, http.StatusInternalServerError, err.Error())
 			} else {
@@ -92,7 +92,7 @@ func (h *Handler) GetPost() http.HandlerFunc {
 			if post, err := h.services.Post.Get(id); err != nil {
 				writeResponse(w, http.StatusBadRequest, err.Error())
 			} else {
-				tmpl := template.Must(template.ParseFiles("./web/template/view_post.html"))
+				tmpl := template.Must(template.ParseFiles("./public/template/view_post.html"))
 				ok := IsLoggedUser(r)
 				max := 8
 				min := 1
@@ -138,7 +138,7 @@ func (h *Handler) Filter() http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		switch r.Method {
 		case "GET":
-			tmpl := template.Must(template.ParseFiles("./web/template/home.html"))
+			tmpl := template.Must(template.ParseFiles("./public/template/home.html"))
 			field := getFiltersFieldFromURL(r.URL.Path)
 
 			userID := 0

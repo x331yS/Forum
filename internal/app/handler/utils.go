@@ -13,7 +13,7 @@ type errorData struct {
 
 func writeResponse(w http.ResponseWriter, code int, resp interface{}) {
 	w.WriteHeader(code)
-	tmpl := template.Must(template.ParseFiles("./web/template/error.html"))
+	tmpl := template.Must(template.ParseFiles("./public/template/error.html"))
 	tmpl.Execute(w, errorData{resp})
 }
 

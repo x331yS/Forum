@@ -10,7 +10,7 @@ import (
 func (h *Handler) Register(w http.ResponseWriter, r *http.Request) {
 	switch r.Method {
 	case "GET":
-		tmpl := template.Must(template.ParseFiles("./web/template/register.html"))
+		tmpl := template.Must(template.ParseFiles("./public/template/register.html"))
 		tmpl.Execute(w, nil)
 	case "POST":
 		user := &models.User{
@@ -37,7 +37,7 @@ func (h *Handler) Register(w http.ResponseWriter, r *http.Request) {
 func (h *Handler) Login(w http.ResponseWriter, r *http.Request) {
 	switch r.Method {
 	case "GET":
-		tmpl := template.Must(template.ParseFiles("./web/template/login.html"))
+		tmpl := template.Must(template.ParseFiles("./public/template/login.html"))
 		tmpl.Execute(w, nil)
 	case "POST":
 		login := r.FormValue("login")
