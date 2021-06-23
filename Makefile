@@ -2,7 +2,7 @@
 
 .PHONY: build
 build:
-	go build -o forum -v ./cmd/app
+	go build -o forum -v ./cmd/
 
 .PHONY: git
 git:
