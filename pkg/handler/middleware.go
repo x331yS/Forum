@@ -34,7 +34,7 @@ func (h *Handler) NeedAuthMiddleware(next http.HandlerFunc) http.HandlerFunc {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		c, _ := r.Cookie("forum")
 		if c == nil {
-			http.Redirect(w, r, "/signin", 302)
+			http.Redirect(w, r, "/login", 302)
 		} else {
 			next.ServeHTTP(w, r)
 		}

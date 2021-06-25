@@ -17,7 +17,7 @@ img {
 }
 
 .hov:hover {
-    background: -webkit-linear-gradient( #fcb045, #fd1d1d, #833ab4);
+    background: -webkit-linear-gradient(#fcb045, #fd1d1d, #833ab4);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 
@@ -28,6 +28,7 @@ img {
     -webkit-text-fill-color: transparent;
 
 }
+
 
 header .logo {
     left: 50px;
