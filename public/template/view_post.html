@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Pycture</title>
+    <link rel="icon" href="../static/img/logo.ico" />
+    <link rel="stylesheet" href="../static/css/sign.css">
+    <link rel="stylesheet" href="../static/css/viewPost.css">
+</head>
+<body>
+
+<section class="banner" id="sec">
+    <header>
+        <img class="logopic" src="../static/img/logo.png" width="100" height="100">
+        <a href="/home" class="logo hov">Pycture</a>
+        <div>
+            <a href="/post/{{.Aleatoire}}" class="logo left hover centerlogo right">Travel ✈</a>
+            {{if .LoggedIn}}
+            <a href="/logout" class="logo hov centerlogo">Log Out 🚪</a>
+            {{else}}
+            <a href="/login" class="logo hov centerlogo">Login 👤</a>
+            {{end}}
+        </div>
+    </header>
+    </div>
+	<div id="page" class="page">
+		<div id="content" class="postcard marginauto">
+			<div class="marginauto">
+				<h2 class="title" class="title">{{.Post.Title}}</h2>
+
+                <p class="posteddiv"><span class="postedtext">⌚ {{.Post.FormatTime}}</span>
+                    <span class="postedtext">Posted by {{.Post.AuthorUsername}} 👤</span></p>
+				<div>
+                    <pre class="content"> {{.Post.Content}}</pre>
+                    <div >{{range .Post.Images}}</div>
+                    <a href="{{.}}">
+                        <img src="{{.}}" class="contentpic" style="white-space: pre-wrap; cursor: zoom-in; word-wrap: break-word;" width="100%" height="100%">
+                    </a>
+                    {{end}}
+                </div>
+                <div class="alignitems" >
+                    <form action="/post/rate" method="POST" class="formsize">
+                        <input type="hidden" name="post_id" value="{{.PostID}}">
+                        <input type="hidden" name="type" value="like">
+                        <input type="submit" value="👍 {{.Post.Likes}}" class="hover" style="width: 100px; float: right; cursor: pointer;">
+                    </form>
+                <form action="/post/rate" method="POST" class="formsize">
+                    <input type="hidden" name="post_id" value="{{.PostID}}">
+                    <input type="hidden" name="type" value="dislike">
+                    <input type="submit" value="👎 {{.Post.Dislikes}}" class="hov" style="width: 100px; float: right; cursor: pointer;">
+                </form>
+
+                    </div>
+			</div>
+            {{range $comment := .Post.Comments}}
+            <div class="comment" style="margin: 10px">
+                <h4> {{$comment.AuthorUsername}}: </h4>
+                <p class="meta"><span class="date">{{$comment.FormatTime}}</span></p>
+
+                <div class="entry">
+                    <pre style="white-space: pre-wrap; word-wrap: break-word;">{{$comment.Content}}</pre>
+                </div>
+                <div class="alignitems">
+                    <form action="/comment/rate" method="POST" class="formsize">
+                        <input type="hidden" name="post_id" value="{{.PostID}}">
+                        <input type="hidden" name="comment_id" value="{{$comment.ID}}">
+                        <input type="hidden" name="type" value="like">
+                        <input type="submit" value="👍 {{.Likes}}" class="hover" style="width: 100px; float: right; cursor: pointer; ">
+                    </form>
+                <form action="/comment/rate" method="POST" class="formsize">
+                    <input type="hidden" name="post_id" value="{{.PostID}}">
+                    <input type="hidden" name="comment_id" value="{{$comment.ID}}">
+                    <input type="hidden" name="type" value="dislike">
+                    <input type="submit" value="👎 {{.Dislikes}}"  class="hov" style="width: 100px; float: right; cursor: pointer;">
+                </form>
+
+                </div>
+            </div>
+            {{end}}
+            <div style="clear: both;">&nbsp;</div>
+            {{if .LoggedIn}}
+            <form action="/comment/create" method="POST">
+                <input type="hidden" name="post_id" value="{{.PostID}}">
+                <textarea rows="10" cols="60" name="content" placeholder="What you think about this post ?"></textarea><br>
+                <input type="submit" value="Comment"  class="hov bg" style="float:none; display: inline">
+            </form>
+            {{end}}
+        </div>
+</div>
+    </div>
+</section>
+<!--<div class="image"></div>-->
+<div class="fun"></div>
+</body>
+<script src="../static/js/size.js"></script>
+<script src="../static/js/anime.min.js"></script>
+<script src="../static/js/resizebg.js"></script>
+<!--<script src="js/bg-image.js"></script>-->
+<script src="../static/js/toggle.js"></script>
+</html>

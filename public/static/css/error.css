@@ -1,0 +1,113 @@
+#notfound .notfound {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+.block {
+    z-index: -1;
+}
+.banner.active {
+    transform: translateX(-22%);
+
+}
+
+/*img {*/
+/*    top: 50px;*/
+/*}*/
+
+.notfound {
+    max-width: 410px;
+    width: 100%;
+    text-align: center;
+}
+
+.notfound .notfound-404 {
+    height: 280px;
+    position: relative;
+    z-index: -1;
+}
+
+.notfound .notfound-404 h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 230px;
+    margin: 0;
+    font-weight: 900;
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    text-shadow: #00dbde 9px 9px, #fc00ff -9px 9px, #00dbde 0 0, #00dbde  0 0;
+    color: #f6f5f7;
+    background-size: cover;
+    background-position: center;
+}
+
+.notfound h2 {
+    text-shadow: #0ABFBC 3px 3px;
+    color: #f6f5f7;
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-top: 0;
+}
+
+.notfound p {
+    font-family: 'Poppins', sans-serif;
+    color: #f6f5f7;
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 20px;
+    margin-top: 0;
+}
+.miner {
+    visibility: hidden;
+}
+
+.notfound a {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-radius: 20px;
+    background: linear-gradient(to bottom left, #00dbde,#fc00ff);
+    color: #FFFFFF;
+    display: inline-block;
+    padding: 15px 30px;
+    -webkit-box-shadow: 0 4px 15px -5px #fff;
+    box-shadow: 0 4px 15px -5px #fff;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: transform 80ms ease-in;
+}
+
+
+@media (max-width: 1000px) {
+    #toggle {
+        visibility: hidden;
+    }
+    .notfound .notfound-404 {
+        height: 102px;
+    }
+
+    .notfound .notfound-404 h1 {
+        font-size: 100px;
+    }
+    .notfound h2 {
+        font-size: 20px;
+
+    }
+    .notfound a {
+        -webkit-box-shadow: 0 4px 5px -5px #fff;
+        box-shadow: 0 2px 2px -4px #fff;
+    }
+    .miner {
+        visibility: initial;
+        left: 250px;
+        top: 1200px;
+    }
+}
