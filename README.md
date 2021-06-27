@@ -10,9 +10,9 @@ This project consists in creating a web forum that allows:
 ### To run:
 
 ```go
-go run cmd/app/main.go
+go run cmd/main.go
 OR
-make && ./forum
+make
 ``` 
 **To run in Docker:**
 
